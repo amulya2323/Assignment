@@ -1,0 +1,7 @@
+#Total Number of occurrences of each digits
+s=input()
+num_arr=list(s)
+def occurance(num_arr):
+    for i in set(num_arr):
+        print(i,"occured",num_arr.count(i),"times")
+occurance(num_arr)
