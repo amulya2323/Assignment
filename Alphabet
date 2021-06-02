@@ -1,0 +1,7 @@
+#Character is Alphabet or Not
+s=input()
+if s.isalpha():
+   print("Character")
+else:
+   print("Not Character")
+   
