@@ -1,0 +1,7 @@
+string=list(map(lambda x: x.lower(),input().strip(". ").split()))
+j={} #dictionary
+for i in set(string):
+	j[i.lower()]=string.count(i)
+word=str(input()).lower()
+print(word,"reapeated in sentence is", j[word] if word in j else 0)
+ 
