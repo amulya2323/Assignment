@@ -1,0 +1,54 @@
+lib = []
+def insert(id, name, cost, author):
+    lib.append([id, name, cost, author])
+
+def delete(id):
+    for i in range(len(lib)):
+        if(lib[i][0] == id):
+            lib.pop(i)
+            break
+
+def search(id1=None, name=None, author=None):
+    if id1 is not None:
+        for i in lib:
+            if i[0] == id1:
+                return i
+    
+    if name is not None:
+        for i in lib:
+            if i[1] == name:
+                return i
+        
+    if author is not None:
+        for i in lib:
+            if i[3] == author:
+                return i
+                
+def list_all():
+    for i in lib:
+        print(i[0],"->", i[1],"->", i[2],"->", i[3])
+
+print("Search: ", search(author="JK Rowling"))
+list_all()
+task=1
+while(task!=0):
+    print("==============================================");
+    print("0. Exit");
+    print("1. Insert Data");
+    print("2. Delete Data");
+    print("3. Search Data");
+    print("4. List All Data");
+    print("==============================================");
+    task=int(input("Enter your choice : "));
+    print("==============================================");
+    if task == 1:
+        temp = input("Enter Id, Name, Price, Author: ").split()
+        insert(int(temp[0]), temp[1], int(temp[2]), temp[3])
+    if task == 2:
+        temp = int(input("Enter id to Delete: "))
+        delete(temp)
+    if task == 3:
+        temp = int(input("Enter id to Search: "))
+        print(search(id1=temp)) 
+    if task == 4:
+        list_all()
